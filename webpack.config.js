@@ -67,6 +67,21 @@ module.exports = [
             },
           ],
         },
+        {
+          test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+          loader: 'url-loader',
+          options: {
+            limit: 10000,
+          },
+        },
+        {
+          test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+          loader: 'url-loader',
+          options: {
+            limit: 10000,
+            name: 'media/[name].[ext]',
+          },
+        },
       ],
     },
     resolve: {
@@ -76,5 +91,44 @@ module.exports = [
         '@': path.resove(__dirname, 'src'),
       },
     },
+    optimization: {
+      splitChunks: {
+        chunks: 'all',
+      },
+      minimizer: [
+        new UglifyJsPlugin({
+          cache: true,
+          sourceMap: true,
+        }),
+        new OptimizeCSSAssetsPlugin({}),
+      ],
+    },
+    plugins: [
+      new VueLoaderPlugin(),
+      new MiniCssExtractPlugin({
+        filename: 'css/style.css',
+        chunkFilename: 'css/[id].css',
+      }),
+      new CopyWebpackPlugin([
+        {
+          from: path.resolve(__dirname, 'src/images/'),
+          to: path.resolve(__dirname, 'dist/images'),
+        },
+        {
+          from: path.resolve(__dirname, 'src/media/'),
+          to: path.resolve(__dirname, 'dist/media'),
+        },
+      ]),
+      new ImageminPlugin({
+        disable: process.env.NODE_ENV !== 'production',
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        pngquant: {
+          quality: '95-100',
+        },
+      }),
+      new HtmlWebpackPlugin({
+        template: path.resolve(__dirname, 'src/index.html'),
+      }),
+    ],
   },
 ];
