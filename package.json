@@ -20,11 +20,13 @@
   },
   "homepage": "https://github.com/macotok/vue_develop_environment#readme",
   "dependencies": {
-    "vue": "^2.6.10"
+    "vue": "^2.6.10",
+    "yui": "^3.18.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
+    "@fortawesome/fontawesome-free": "^5.8.1",
     "autoprefixer": "^9.5.1",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",

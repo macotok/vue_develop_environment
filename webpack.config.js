@@ -13,7 +13,7 @@ module.exports = [
     entry: {
       app: [
         './src/js/app.js',
-        './src/sass/style.scss',
+        './src/assets/sass/style.scss',
       ],
     },
     output: {
@@ -111,12 +111,12 @@ module.exports = [
       }),
       new CopyWebpackPlugin([
         {
-          from: path.resolve(__dirname, 'src/images/'),
-          to: path.resolve(__dirname, 'dist/images'),
+          from: path.resolve(__dirname, 'src/assets/images/'),
+          to: path.resolve(__dirname, 'dist/assets/images'),
         },
         {
-          from: path.resolve(__dirname, 'src/media/'),
-          to: path.resolve(__dirname, 'dist/media'),
+          from: path.resolve(__dirname, 'src/assets/media/'),
+          to: path.resolve(__dirname, 'dist/assets/media'),
         },
       ]),
       new ImageminPlugin({
