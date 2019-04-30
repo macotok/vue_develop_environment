@@ -14,29 +14,32 @@
 - webpack-dev-server
 - sideEffects: false
 - resolve
-    - extensions .js/.vue
-    - alias vue$/@
+   - extensions .js/.json/.vue
+   - alias vue$/@
 - loader
+    - pug
     - vue
     - babel
     - scss
-        - style(MiniCssExtractPlugin.loader)
-        - css
-        - PostCSS
-        - sass
+       - style(MiniCssExtractPlugin.loader)
+       - css
+       - PostCSS(AutoPrefixer)
+       - sass
     - url
-        - image file
-        - media file
+       - image
+       - webfonts
+       - media
 - Chunks(all)
 - minimize
-    - css
-    - js
+   - css
+   - js
 - plugins
-    - VueLoaderPlugin
-    - MiniCssExtractPlugin
-    - CopyWebpackPlugin
-    - ImageminPlugin
-    - HtmlWebpackPlugin
+   - CopyWebpackPlugin
+   - HtmlWebpackPlugin
+   - ImageminPlugin
+   - MiniCssExtractPlugin
+   - StylelintPlugin
+   - VueLoaderPlugin
 - Lint
     - ESLint
     - StyleLint

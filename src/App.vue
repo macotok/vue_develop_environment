@@ -1,7 +1,5 @@
-<template>
-    <div>
-        Hello World
-    </div>
+<template lang="pug">
+  div Hello World
 </template>
 
 <script>
