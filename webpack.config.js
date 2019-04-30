@@ -13,7 +13,7 @@ module.exports = [
   {
     entry: {
       app: [
-        './src/js/app.js',
+        './src/main.js',
         './src/assets/sass/style.scss',
       ],
     },
@@ -74,6 +74,17 @@ module.exports = [
           options: {
             limit: 10000,
           },
+        },
+        {
+          test: /\.(woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
+          use: [{
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: './webfonts',
+              publicPath: '../webfonts',
+            },
+          }],
         },
         {
           test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
