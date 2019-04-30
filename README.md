@@ -7,6 +7,9 @@
 - atomic design
 - typescript
 - json server
+- sassをimport
+- store
+- router
 
 ## Develop
 
