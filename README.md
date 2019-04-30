@@ -9,7 +9,6 @@
 - json server
 - sassをimport
 - store
-- router
 
 ## Develop
 

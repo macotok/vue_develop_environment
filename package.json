@@ -22,6 +22,7 @@
   "homepage": "https://github.com/macotok/vue_develop_environment#readme",
   "dependencies": {
     "vue": "^2.6.10",
+    "vue-router": "^3.0.6",
     "vuex": "^3.1.0",
     "yui": "^3.18.1"
   },

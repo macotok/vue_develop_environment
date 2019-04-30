@@ -1,16 +1,6 @@
 <template lang="pug">
-  sample
+  router-view
 </template>
-
-<script>
-import Sample from '@/components/pages/Sample';
-
-export default {
-  components: {
-    Sample,
-  },
-};
-</script>
 
 <style lang="scss">
   div {
