@@ -2,13 +2,11 @@
   div
     table
       mo-input-text(
-        labelName="ラベル1"
-      )
+      ) ラベル1
       mo-input-text(
-        labelName="ラベル1"
-      )
+      ) ラベル2
     at-button(
-    ) ボタン
+    )
 </template>
 
 <script>
