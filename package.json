@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "sideEffects": false,
   "scripts": {
     "start": "webpack-dev-server",
     "dev": "webpack --mode development",
