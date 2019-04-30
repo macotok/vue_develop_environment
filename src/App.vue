@@ -4,8 +4,11 @@
     ) 大見出し
     mo-title-block(
     )
-    mo-input-text(
-    )
+    table
+      mo-input-text(
+      )
+      mo-input-text(
+      )
     at-button(
     ) ボタン
 </template>
