@@ -2,7 +2,7 @@
   tr
     th
       at-label(
-      ) ラベル
+      ) {{ labelName }}
     td
       at-text-input(
       )
@@ -16,6 +16,12 @@ export default {
   components: {
     AtLabel,
     AtTextInput,
-  }
-}
+  },
+  props: {
+    labelName: {
+      type: String,
+      default: '',
+    },
+  },
+};
 </script>

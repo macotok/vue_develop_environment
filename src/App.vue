@@ -1,30 +1,24 @@
 <template lang="pug">
   div
-    at-title-h1(
-    ) 大見出し
+    or-header(
+      title="大見出し"
+    )
     mo-title-block(
     )
-    table
-      mo-input-text(
-      )
-      mo-input-text(
-      )
-    at-button(
-    ) ボタン
+    or-form(
+    )
 </template>
 
 <script>
-import AtButton from '@/components/atoms/form/AtButton';
-import AtTitleH1 from '@/components/atoms/text/AtTitleH1';
-import MoInputText from '@/components/molecules/MoInputTetxt';
 import MoTitleBlock from '@/components/molecules/MoTitleBlock';
+import OrForm from '@/components/organisms/OrForm';
+import OrHeader from '@/components/organisms/OrHeader';
 
 export default {
   components: {
-    AtButton,
-    AtTitleH1,
-    MoInputText,
     MoTitleBlock,
+    OrForm,
+    OrHeader,
   },
 };
 </script>
