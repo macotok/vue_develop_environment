@@ -1,10 +1,17 @@
 # Vue Develop Environment
 
+## TODO
+
+- jest
+- env
+- atomic design
+- typescript
+- json server
+
 ## Develop
 
 - webpack
 - webpack-dev-server
-- ESLint for Vue.js
 - sideEffects: false
 - resolve
     - extensions .js/.vue
@@ -21,10 +28,15 @@
         - image file
         - media file
 - Chunks(all)
-- minimize to style.css
+- minimize
+    - css
+    - js
 - plugins
     - VueLoaderPlugin
     - MiniCssExtractPlugin
     - CopyWebpackPlugin
     - ImageminPlugin
     - HtmlWebpackPlugin
+- Lint
+    - ESLint
+    - StyleLint

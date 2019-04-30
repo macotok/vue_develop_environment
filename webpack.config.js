@@ -5,6 +5,7 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const path = require('path');
+const StylelintPlugin = require('stylelint-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
 
@@ -88,7 +89,7 @@ module.exports = [
       extensions: ['.js', 'json', '.vue'],
       alias: {
         vue$: 'vue/dist/vue.esm.js',
-        '@': path.resove(__dirname, 'src'),
+        '@': path.resolve(__dirname, 'src'),
       },
     },
     optimization: {
@@ -104,11 +105,6 @@ module.exports = [
       ],
     },
     plugins: [
-      new VueLoaderPlugin(),
-      new MiniCssExtractPlugin({
-        filename: 'css/style.css',
-        chunkFilename: 'css/[id].css',
-      }),
       new CopyWebpackPlugin([
         {
           from: path.resolve(__dirname, 'src/assets/images/'),
@@ -119,6 +115,9 @@ module.exports = [
           to: path.resolve(__dirname, 'dist/assets/media'),
         },
       ]),
+      new HtmlWebpackPlugin({
+        template: path.resolve(__dirname, 'src/index.html'),
+      }),
       new ImageminPlugin({
         disable: process.env.NODE_ENV !== 'production',
         test: /\.(jpe?g|png|gif|svg)$/i,
@@ -126,9 +125,14 @@ module.exports = [
           quality: '95-100',
         },
       }),
-      new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, 'src/index.html'),
+      new MiniCssExtractPlugin({
+        filename: 'css/style.css',
+        chunkFilename: 'css/[id].css',
       }),
+      new StylelintPlugin({
+        files: ['**/*.vue'],
+      }),
+      new VueLoaderPlugin(),
     ],
   },
 ];
