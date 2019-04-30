@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import Vuex from 'vuex';
+// import Vuex from 'vuex';
 import App from './App';
 // import _store from './store';
 
@@ -7,9 +7,9 @@ import App from './App';
 
 // const store = new Vuex.Store(_store);
 
-new Vue({
-  el: '#app',
+const app = new Vue({
   components: { App },
   template: '<App/>',
   // store,
 });
+app.$mount('#app');
