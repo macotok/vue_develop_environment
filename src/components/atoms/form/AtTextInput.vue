@@ -8,8 +8,8 @@
 <script>
 export default {
   methods: {
-    inputText() {
-      console.log('input text');
+    inputText(e) {
+      this.$emit('input-text', e.target.value);
     },
   },
 };

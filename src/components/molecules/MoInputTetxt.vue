@@ -6,6 +6,7 @@
         slot
     td
       at-text-input(
+        @input-text = 'eventHandle',
       )
 </template>
 
@@ -17,6 +18,17 @@ export default {
   components: {
     AtLabel,
     AtTextInput,
+  },
+  props: {
+    actionType: {
+      type: String,
+      default: '',
+    },
+  },
+  methods: {
+    eventHandle(value) {
+      return this.$store.dispatch(this.actionType, value);
+    },
   },
 };
 </script>
