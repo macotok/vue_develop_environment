@@ -6,8 +6,8 @@
 - env
 - typescript
 - json server
-- sassをglobalでimport
-- store
+- actionを1つで引数で保存する場所を変える
+- stateを受け取るpropsはrequired
 
 ## Develop
 
@@ -26,6 +26,7 @@
          - css
          - PostCSS(AutoPrefixer)
          - sass
+         - global to scss
       - url
          - image
          - webfonts
@@ -51,3 +52,7 @@
   - templates
   - pages
 - router
+- vuex
+  - state
+  - mutations
+  - actions

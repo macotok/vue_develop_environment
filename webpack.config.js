@@ -1,10 +1,10 @@
+const path = require('path');
 const AutoPrefixer = require('autoprefixer');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const path = require('path');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
@@ -77,6 +77,12 @@ module.exports = [
             },
             {
               loader: 'sass-loader',
+            },
+            {
+              loader: 'sass-resources-loader',
+              options: {
+                resources: path.resolve(__dirname, 'src/assets/sass/_variable.scss'),
+              },
             },
           ],
         },
