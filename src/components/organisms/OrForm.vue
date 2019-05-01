@@ -10,9 +10,9 @@
     at-button(
     )
     at-text(
-    ) label01: {{ label01 }}
+    ) ラベル1: {{ label01 }}
     at-text(
-    )  label02: {{ label02 }}
+    ) ラベル2: {{ label02 }}
 </template>
 
 <script>

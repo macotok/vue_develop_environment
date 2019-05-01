@@ -1,7 +1,7 @@
 <template lang="pug">
   te-sample(
-    :label01="this.label01"
-    :label02="this.label02"
+    :label01="label01"
+    :label02="label02"
   )
 </template>
 
