@@ -1,3 +1,4 @@
 export default {
-  test: 'test to state',
+  label01: '',
+  label02: '',
 };

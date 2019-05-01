@@ -6,6 +6,8 @@
     mo-title-block(
     )
     or-form(
+      :label01="this.label01"
+      :label02="this.label02"
     )
 </template>
 
@@ -19,6 +21,16 @@ export default {
     MoTitleBlock,
     OrForm,
     OrHeader,
+  },
+  props: {
+    label01: {
+      type: String,
+      default: '',
+    },
+    label02: {
+      type: String,
+      default: '',
+    },
   },
 };
 </script>

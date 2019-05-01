@@ -9,16 +9,32 @@
       ) ラベル2
     at-button(
     )
+    at-text(
+    ) label01: {{ label01 }}
+    at-text(
+    )  label02: {{ label02 }}
 </template>
 
 <script>
 import AtButton from '@/components/atoms/form/AtButton';
+import AtText from '@/components/atoms/text/AtText';
 import MoInputText from '@/components/molecules/MoInputTetxt';
 
 export default {
   components: {
     AtButton,
+    AtText,
     MoInputText,
+  },
+  props: {
+    label01: {
+      type: String,
+      default: '',
+    },
+    label02: {
+      type: String,
+      default: '',
+    },
   },
 };
 </script>
