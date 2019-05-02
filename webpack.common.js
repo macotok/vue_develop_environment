@@ -14,6 +14,11 @@ module.exports = {
       './src/assets/sass/style.scss',
     ],
   },
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'js/[name].js',
+    publicPath: '/',
+  },
   module: {
     rules: [
       {
