@@ -1,9 +1,10 @@
-const path = require('path');
 const AutoPrefixer = require('autoprefixer');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require('path');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
 
@@ -132,5 +133,8 @@ module.exports = {
       files: ['**/*.vue'],
     }),
     new VueLoaderPlugin(),
+    new Dotenv({
+      path: `${__dirname}/.env`,
+    }),
   ],
 };
