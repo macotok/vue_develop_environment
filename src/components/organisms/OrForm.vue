@@ -30,10 +30,12 @@ export default {
     label01: {
       type: String,
       default: '',
+      require: true,
     },
     label02: {
       type: String,
       default: '',
+      require: true,
     },
   },
 };

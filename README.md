@@ -5,9 +5,7 @@
 - jest
 - env
 - typescript
-- json server
 - actionを1つで引数で保存する場所を変える
-- stateを受け取るpropsはrequired
 
 ## Develop
 

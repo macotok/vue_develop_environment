@@ -23,6 +23,7 @@ export default {
     actionType: {
       type: String,
       default: '',
+      require: true,
     },
   },
   methods: {
