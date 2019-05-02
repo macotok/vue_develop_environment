@@ -11,7 +11,7 @@ describe('OrHeader test', () => {
       wrapper.setProps({
         title: 'hello title',
       });
-      expect(wrapper.props().title).toBe('hello title');
+      expect(wrapper.vm.$props.title).toBe('hello title');
     });
   });
   describe('template', () => {

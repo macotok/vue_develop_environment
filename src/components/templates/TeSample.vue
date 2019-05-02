@@ -26,10 +26,12 @@ export default {
     label01: {
       type: String,
       default: '',
+      required: true,
     },
     label02: {
       type: String,
       default: '',
+      required: true,
     },
   },
 };
