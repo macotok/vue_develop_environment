@@ -11,6 +11,7 @@
 - sideEffects: false
 - webpack
   - webpack-dev-server
+  - select mode to develop or production
   - resolve
      - extensions .js/.json/.vue
      - alias vue$/@
@@ -53,3 +54,4 @@
   - state
   - mutations
   - actions
+- .env
