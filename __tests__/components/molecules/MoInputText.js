@@ -5,7 +5,12 @@ describe('MoInputText test', () => {
   let wrapper;
   beforeEach(() => {
     const requiredProps = { actionType: 'test actionType' };
-    wrapper = shallowMount(MoInputText, { propsData: requiredProps });
+    wrapper = shallowMount(MoInputText, {
+      propsData: requiredProps,
+      slots: {
+        default: '<div data-test="slotContent">slot content</div>',
+      },
+    });
   });
   describe('props', () => {
     test('propsを受け取れること', () => {
@@ -19,6 +24,13 @@ describe('MoInputText test', () => {
     });
     test('requiredがtrueになっていること', () => {
       expect(wrapper.vm.$options.props.actionType.required).toBe(true);
+    });
+  });
+  describe('slot', () => {
+    test('slotにコンテンツが挿入できること', () => {
+      const slotContent = wrapper.find('[data-test="slotContent"]');
+      expect(slotContent.exists()).toBe(true);
+      expect(slotContent.text()).toBe('slot content');
     });
   });
 });

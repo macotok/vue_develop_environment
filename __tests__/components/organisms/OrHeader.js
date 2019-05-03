@@ -18,12 +18,4 @@ describe('OrHeader test', () => {
       expect(wrapper.vm.$options.props.title.required).toBe(true);
     });
   });
-  describe('template', () => {
-    test('titleがレンダリングされること', () => {
-      wrapper.setProps({
-        title: 'hello title',
-      });
-      expect(wrapper.text()).toBe('hello title');
-    });
-  });
 });
