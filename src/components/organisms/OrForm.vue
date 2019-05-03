@@ -18,7 +18,7 @@
 <script>
 import AtButton from '@/components/atoms/form/AtButton';
 import AtText from '@/components/atoms/text/AtText';
-import MoInputText from '@/components/molecules/MoInputTetxt';
+import MoInputText from '@/components/molecules/MoInputText';
 
 export default {
   components: {
