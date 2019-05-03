@@ -6,7 +6,7 @@
         slot
     td
       at-text-input(
-        @input-text = 'eventHandle',
+        @input-text='eventHandle',
       )
 </template>
 

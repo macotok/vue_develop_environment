@@ -1,23 +1,13 @@
 import { shallowMount } from '@vue/test-utils';
-import AtButton from '@/components/atoms/form/AtButton';
+import AtLabel from '@/components/atoms/form/AtLabel';
 
-describe('AtButton test', () => {
+describe('AtLabel', () => {
   let wrapper;
   beforeEach(() => {
-    wrapper = shallowMount(AtButton, {
+    wrapper = shallowMount(AtLabel, {
       slots: {
         default: '<div data-test="slotContent">slot content</div>',
       },
-    });
-  });
-  describe('v-on', () => {
-    test('clickでclickButtonメソッドが実行されること', () => {
-      const stub = jest.fn();
-      wrapper.setMethods({
-        clickButton: stub,
-      });
-      wrapper.trigger('click');
-      expect(stub).toHaveBeenCalled();
     });
   });
   describe('slot', () => {
