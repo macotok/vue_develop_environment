@@ -33,4 +33,22 @@ describe('MoInputText test', () => {
       expect(slotContent.text()).toBe('slot content');
     });
   });
+  describe('mount', () => {
+    test('input-textイベントがemitされたときにeventHandleが呼ばれること', () => {
+      const stub = jest.fn();
+      wrapper.setMethods({
+        eventHandle: stub,
+      });
+      wrapper.vm.eventHandle();
+      expect(stub).toHaveBeenCalled();
+    });
+    test('input-textイベントがemitされたたときに値が渡されること', () => {
+      const stub = jest.fn();
+      wrapper.setMethods({
+        eventHandle: stub,
+      });
+      wrapper.vm.eventHandle('inputValue');
+      expect(stub).toBeCalledWith('inputValue');
+    });
+  });
 });
