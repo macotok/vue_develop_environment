@@ -26,7 +26,7 @@ describe('AtTextInput', () => {
       });
       test('input-textイベントのemitで値が渡されること', () => {
         wrapper.vm.inputText({ target: { value: 'inputValue' } });
-        expect(wrapper.emitted('input-text')[0][0]).toBe('inputValue');
+        expect(wrapper.emitted('input-text')[0][0].target.value).toBe('inputValue');
       });
     });
   });

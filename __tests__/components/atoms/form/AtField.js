@@ -1,14 +1,14 @@
 import { shallowMount } from '@vue/test-utils';
-import MoInputText from '@/components/molecules/MoInputText';
+import AtField from '@/components/atoms/form/AtField';
 
-describe('MoInputText test', () => {
+describe('AtField test', () => {
   let wrapper;
   beforeEach(() => {
     const requiredProps = {
       actionType: 'test actionType',
       name: 'test name',
     };
-    wrapper = shallowMount(MoInputText, {
+    wrapper = shallowMount(AtField, {
       propsData: requiredProps,
       slots: {
         default: '<div data-test="slotContent">slot content</div>',
@@ -38,6 +38,24 @@ describe('MoInputText test', () => {
       const slotContent = wrapper.find('[data-test="slotContent"]');
       expect(slotContent.exists()).toBe(true);
       expect(slotContent.text()).toBe('slot content');
+    });
+  });
+  describe('mount', () => {
+    test('input-textイベントがemitされたときにinputTextが呼ばれること', () => {
+      const stub = jest.fn();
+      wrapper.setMethods({
+        inputText: stub,
+      });
+      wrapper.vm.inputText();
+      expect(stub).toHaveBeenCalled();
+    });
+    test('input-textイベントがemitされたたときに値が渡されること', () => {
+      const stub = jest.fn();
+      wrapper.setMethods({
+        inputText: stub,
+      });
+      wrapper.vm.inputText('inputValue');
+      expect(stub).toBeCalledWith('inputValue');
     });
   });
 });
