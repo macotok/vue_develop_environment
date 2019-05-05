@@ -3,7 +3,7 @@
     type="submit"
     @click="clickButton"
   )
-    slot ログイン
+    slot ボタン
 </template>
 
 <script>

@@ -1,10 +1,4 @@
 <template lang="pug">
-  p(
-    class="at-text"
-  )
+  p
     slot
 </template>
-
-<script>
-export default {};
-</script>

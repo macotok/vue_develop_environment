@@ -10,8 +10,7 @@
           name='label02'
           actionType='action01'
         ) ラベル2
-      at-button(
-      )
+      at-button
     at-text(
     ) ラベル1: {{ label01 }}
     at-text(

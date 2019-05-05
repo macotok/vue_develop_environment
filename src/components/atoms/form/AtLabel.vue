@@ -1,9 +1,4 @@
 <template lang="pug">
-  label(
-  )
+  label
     slot
 </template>
-
-<script>
-export default {};
-</script>
