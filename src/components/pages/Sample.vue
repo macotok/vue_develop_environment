@@ -1,10 +1,8 @@
 <template lang="pug">
-  div
-    te-sample(
-      :label01="label01"
-      :label02="label02"
-    )
-    p test
+  te-sample(
+    :label01="label01"
+    :label02="label02"
+  )
 </template>
 
 <script>

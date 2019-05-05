@@ -9,7 +9,7 @@
 export default {
   methods: {
     inputText(e) {
-      this.$emit('input-text', e.target.value);
+      this.$emit('input-text', e);
     },
   },
 };

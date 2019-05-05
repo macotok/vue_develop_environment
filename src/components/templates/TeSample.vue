@@ -3,8 +3,7 @@
     or-header(
       title="大見出し"
     )
-    mo-title-block(
-    )
+    mo-title-block
     or-form(
       :label01="label01"
       :label02="label02"

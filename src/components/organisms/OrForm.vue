@@ -1,16 +1,17 @@
 <template lang="pug">
   div
-    table
-      mo-input-text(
-        name='label01'
-        actionType='action01'
-      ) ラベル1
-      mo-input-text(
-        name='label02'
-        actionType='action01'
-      ) ラベル2
-    at-button(
-    )
+    form
+      table
+        mo-input-text(
+          name='label01'
+          actionType='action01'
+        ) ラベル1
+        mo-input-text(
+          name='label02'
+          actionType='action01'
+        ) ラベル2
+      at-button(
+      )
     at-text(
     ) ラベル1: {{ label01 }}
     at-text(

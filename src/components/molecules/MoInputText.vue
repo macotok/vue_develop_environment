@@ -1,21 +1,27 @@
 <template lang="pug">
   tr
     th
-      at-label(
-      )
+      at-label
         slot
     td
-      at-text-input(
-        @input-text='eventHandle',
+      at-field(
+        :actionType="actionType"
+        :name="name"
       )
+        at-text-input(
+          slot-scope="{inputText}"
+          @input-text="inputText"
+        )
 </template>
 
 <script>
+import AtField from '@/components/atoms/form/AtField';
 import AtLabel from '@/components/atoms/form/AtLabel';
 import AtTextInput from '@/components/atoms/form/AtTextInput';
 
 export default {
   components: {
+    AtField,
     AtLabel,
     AtTextInput,
   },
@@ -29,14 +35,6 @@ export default {
       type: String,
       default: '',
       required: true,
-    },
-  },
-  methods: {
-    eventHandle(value) {
-      return this.$store.dispatch(this.actionType, {
-        value,
-        name: this.name,
-      });
     },
   },
 };
