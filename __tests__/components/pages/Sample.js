@@ -1,13 +1,14 @@
 import Vuex from 'vuex';
 import { shallowMount, createLocalVue } from '@vue/test-utils';
 import Sample from '@/components/pages/Sample';
+import TeSample from '@/components/templates/TeSample';
 
 const localVue = createLocalVue();
 localVue.use(Vuex);
 
 const store = new Vuex.Store({
   state: {
-    label01: 'label01',
+    label01: 'test label01',
   },
 });
 
@@ -17,13 +18,11 @@ describe('Sample test', () => {
     wrapper = shallowMount(Sample, {
       store,
       localVue,
-      computed: {
-        label01: () => 'label01',
-      },
     });
   });
   describe('mount', () => {
-    test('label01関数が呼ばれること', () => {
+    test('.at-textがstateを反映させているか', () => {
+      expect(wrapper.find(TeSample).props().label01).toBe('test label01');
     });
   });
 });

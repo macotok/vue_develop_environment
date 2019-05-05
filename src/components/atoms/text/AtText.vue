@@ -1,5 +1,7 @@
 <template lang="pug">
-  p
+  p(
+    class="at-text"
+  )
     slot
 </template>
 
