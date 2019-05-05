@@ -4,7 +4,6 @@
 
 - jest
 - typescript
-- actionを1つで引数で保存する場所を変える
 
 ## Develop
 

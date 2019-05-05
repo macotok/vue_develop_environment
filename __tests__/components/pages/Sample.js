@@ -21,7 +21,7 @@ describe('Sample test', () => {
     });
   });
   describe('mount', () => {
-    test('.at-textがstateを反映させているか', () => {
+    test('TeSampleにstateの値をpropsで渡せているかどうか', () => {
       expect(wrapper.find(TeSample).props().label01).toBe('test label01');
     });
   });

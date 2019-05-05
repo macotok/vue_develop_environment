@@ -2,10 +2,12 @@
   div
     table
       mo-input-text(
+        name='label01'
         actionType='action01'
       ) ラベル1
       mo-input-text(
-        actionType='action02'
+        name='label02'
+        actionType='action01'
       ) ラベル2
     at-button(
     )

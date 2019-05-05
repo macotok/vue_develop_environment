@@ -25,10 +25,18 @@ export default {
       default: '',
       required: true,
     },
+    name: {
+      type: String,
+      default: '',
+      required: true,
+    },
   },
   methods: {
     eventHandle(value) {
-      return this.$store.dispatch(this.actionType, value);
+      return this.$store.dispatch(this.actionType, {
+        value,
+        name: this.name,
+      });
     },
   },
 };
