@@ -2,7 +2,6 @@
 
 ## TODO
 
-- jest
 - typescript
 
 ## Develop
@@ -55,3 +54,4 @@
   - mutations
   - actions
 - .env
+- jest
