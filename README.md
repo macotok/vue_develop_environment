@@ -55,3 +55,4 @@
   - actions
 - .env
 - jest
+  - @vue/test-utils
