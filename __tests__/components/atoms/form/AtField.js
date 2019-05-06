@@ -1,8 +1,15 @@
-import { shallowMount } from '@vue/test-utils';
+import Vuex from 'vuex';
+import { createLocalVue, shallowMount } from '@vue/test-utils';
 import AtField from '@/components/atoms/form/AtField';
+
+const localVue = createLocalVue();
+localVue.use(Vuex);
 
 describe('AtField test', () => {
   let wrapper;
+  const mockStore = {
+    dispatch: jest.fn(),
+  };
   beforeEach(() => {
     const requiredProps = {
       actionType: 'test actionType',
@@ -13,6 +20,10 @@ describe('AtField test', () => {
       slots: {
         default: '<div data-test="slotContent">slot content</div>',
       },
+      mocks: {
+        $store: mockStore,
+      },
+      localVue,
     });
   });
   describe('props', () => {
@@ -56,6 +67,19 @@ describe('AtField test', () => {
       });
       wrapper.vm.inputText('inputValue');
       expect(stub).toBeCalledWith('inputValue');
+    });
+    test('input-textメソッドがemitされたときにdispatchで値が渡されること', () => {
+      wrapper.setProps({
+        actionType: 'test actionType',
+        name: 'test name',
+      });
+      wrapper.vm.inputText({ target: { value: 'inputValue' } });
+      expect(mockStore.dispatch).toHaveBeenCalledWith(
+        'test actionType', {
+          value: 'inputValue',
+          name: 'test name',
+        },
+      );
     });
   });
 });
